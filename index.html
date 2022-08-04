@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reto Card 🥳</title>
+    <title>PokeAPI🔴</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     <!-- Normalize-->
@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- AnimateCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- CSS -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -30,31 +32,33 @@
 
             <!-- Cuerpo de la card -->
             <div class="card-body">
-                <img class="card-body-img" src="img/image-victor.jpg" alt="imagen viktor">
+                <img class="card-body-img animate__animated animate__zoomIn" src="img/image-victor.jpg" alt="imagen pokemon">
 
-                <h1 class="card-body-title">
+                <h1 class="card-body-title  animate__animated animate__zoomIn">
                     Victor Charst
                     <span>26</span>
                 </h1>
-                <p class="card-body-text">London</p>
+                <p class="card-body-text  animate__animated animate__zoomIn">London</p>
             </div>
 
             <!-- Pie de la card -->
             <div class="card-footer">
-                <div class="card-footer-social">
+                <div class="card-footer-social animate__animated animate__zoomIn">
                     <h3>80K</h3>
-                    <p>Seguidores</p>
+                    <p>Ataque</p>
                 </div>
-                <div class="card-footer-social">
+                <div class="card-footer-social animate__animated animate__zoomIn">
                     <h3>803K</h3>
-                    <p>Me gusta</p>
+                    <p>Defensa</p>
                 </div>
-                <div class="card-footer-social">
+                <div class="card-footer-social animate__animated animate__zoomIn">
                     <h3>1.4K</h3>
-                    <p>Fotos</p>
+                    <p>Velocidad</p>
                 </div>
             </div>
+            <input class="actualizar" type="button" value="Actualizar" onclick="location.reload()"/>
         </article>
+        
     </template>
 
     <!-- JavaScript -->

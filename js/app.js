@@ -20,10 +20,16 @@ const fetchData = async(id) => {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
             // lo transformamos a JSON
         const data = await res.json()
+        console.log(data)
 
         const pokemon = {
             img: data.sprites.other.dream_world.front_default,
             nombre: data.name,
+            hp: data.stats[0].base_stat,
+            exp: data.base_experience,
+            attack: data.stats[1].base_stat,
+            def: data.stats[2].base_stat,
+            speed: data.stats[5].base_stat
         }
 
         pintarCard(pokemon)
@@ -48,7 +54,13 @@ const pintarCard = (pokemon) => {
 
     // acceder a la data
     clone.querySelector('.card-body-img').setAttribute('src', pokemon.img)
-    clone.querySelector('.card-body-title').innerHTML = `${pokemon.nombre}<span>26</span>`
+    clone.querySelector('.card-body-title').innerHTML = `${pokemon.nombre}<span>${pokemon.hp} hp</span>`
+    clone.querySelector('.card-body-text').innerHTML = `<p>${pokemon.exp} exp</p>`
+
+    // Text content para texto plano del html
+    clone.querySelectorAll('.card-footer-social h3')[0].textContent = pokemon.attack
+    clone.querySelectorAll('.card-footer-social h3')[1].textContent = pokemon.def
+    clone.querySelectorAll('.card-footer-social h3')[2].textContent = pokemon.speed
 
     // que guarde en el fragment 
     fragment.appendChild(clone)
